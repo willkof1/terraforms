@@ -1,0 +1,3 @@
+locals {
+    regra = var.regra
+}
