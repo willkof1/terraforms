@@ -91,10 +91,10 @@ data "template_file" "user_data" {
 }
 
 resource "aws_instance" "test_runner" {
-  ami                    = data.aws_ami.amazon_linux.id
-  instance_type          = var.instance_type
-  key_name               = var.key_pair_name
-  vpc_security_group_ids = [aws_security_group.ec2_sg.id]
+  ami                         = data.aws_ami.amazon_linux.id
+  instance_type               = var.instance_type
+  key_name                    = var.key_pair_name
+  vpc_security_group_ids      = [aws_security_group.ec2_sg.id]
   subnet_id                   = var.subnet_ids[0]
   user_data                   = data.template_file.user_data.rendered
   iam_instance_profile        = "ec2_s3_profile" # ou o nome do instance profile associado à role s3-role

@@ -31,17 +31,14 @@ variable "redis_auth_token" {
 variable "vpc_id" {
   description = "O ID da sua VPC existente."
   type        = string
-  default     = "vpc-00ebbf529e98939d9" # SUBSTITUA PELO SEU VPC ID
 }
 
 variable "subnet_ids" {
   description = "Uma lista de IDs de subnet existentes onde o cluster ElastiCache será criado."
   type        = list(string)
-  default     = ["subnet-03ab19be2d59fd559", "subnet-06060f7cd8b84c789"]
 }
 
 variable "key_pair_name" {
   description = "Nome do seu Key Pair da EC2 para acesso SSH. DEVE existir na região."
   type        = string
-  default = "aws_will_prd"
 }
